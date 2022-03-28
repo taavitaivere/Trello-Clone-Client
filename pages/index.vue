@@ -38,7 +38,7 @@
               }');height:150px;background-size: cover;background-position: center;`"
             >
               <template
-                v-if="!fileToUpload.progress || fileToUpload.progress == 0"
+                v-if="!fileToUpload.progress || fileToUpload.progress === 0"
               >
                 <v-icon>mdi-camera</v-icon>
                 <p>Add a board background</p>
@@ -82,16 +82,16 @@
     <div class="d-flex flex-wrap align-center justify-start">
       <p v-if="boards.length === 0">You have no boards yet.</p>
       <v-card
-        :style="board.image.downloadURL != '' ? `background:url(${board.image.downloadURL});`: board.color ? `background-color:${board.color}` : ''"
+        :style="board.image.downloadURL !== '' ? `background:url(${board.image.downloadURL});`: board.color ? `background-color:${board.color}` : ''"
         @click="$router.push('/boards/' + board.id)"
         class="jello-board-tile"
         v-for="board in boards"
         v-bind:key="board.id"
       >
-        <v-card-title :style="board.image.downloadURL != '' ? 'color:#fff':''">
+        <v-card-title :style="board.image.downloadURL !== '' ? 'color:#fff':''">
           {{ board.title }}
         </v-card-title>
-        <v-card-subtitle :style="board.image.downloadURL != '' ? 'color:#fff':''">
+        <v-card-subtitle :style="board.image.downloadURL !== '' ? 'color:#fff':''">
           created {{ board.dateCreated | formatDate }}
         </v-card-subtitle>
       </v-card>

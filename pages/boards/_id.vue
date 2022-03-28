@@ -2,7 +2,7 @@
   <div
     class="d-flex flex-column board"
     :style="
-      board.image.downloadURL != ''
+      board.image.downloadURL !== ''
         ? `background:url(${board.image.downloadURL});background-size:cover;`
         : board.color
         ? `background-color:${board.color}`
@@ -262,7 +262,7 @@ export default {
     async createList() {
       let that = this
       that.dialog = false
-      if (that.list.title != '') {
+      if (that.list.title !== '') {
         //add to firebase
         //Let's give our list a created date.
         that.list.id = uuidv4()
@@ -329,7 +329,7 @@ export default {
       let index = -1
       let count = 0
       for (const list of that.board.lists) {
-        if(list.id == listId) {
+        if(list.id === listId) {
           index = count
         }
         count++
@@ -344,7 +344,7 @@ export default {
       that.dialogCard = false
       //show modal to capture card name
       //add card
-      if (that.card.title != '') {
+      if (that.card.title !== '') {
         //add to firebase
         //Let's give our card a created date.
         that.card.id = uuidv4()
@@ -359,7 +359,7 @@ export default {
             }
             count++
           }
-          if (index != -1) {
+          if (index !== -1) {
             //we found the list, now push our card
             if (that.board.lists[index].cards) {
               that.board.lists[index].cards.push(that.card)
@@ -384,7 +384,7 @@ export default {
       for (const list of that.board.lists) {
         if (that.currentCard.listId === list.id) {
           //correct list, now find card
-          for (const card of list.cards) {
+          for (let card of list.cards) {
             if (card.id === that.currentCard.id) {
               card = that.currentCard
             }
