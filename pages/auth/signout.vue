@@ -4,6 +4,9 @@
 
 <script>
 export default {
+  async AsyncData() {
+    $nuxt.$fire.$auth.signOut()
+  }
 }
 </script>
 <style>
