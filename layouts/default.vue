@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content >
+    <v-main >
       <!-- desktop -->
       <!-- <div class="d-none d-md-block"></div> -->
       <!-- mobile -->
@@ -61,7 +61,7 @@
       </div>
       <!-- content -->
       <nuxt />
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
