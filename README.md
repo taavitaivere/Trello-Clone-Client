@@ -3,6 +3,12 @@
 ## Build Setup
 
 ```bash
+NB! photo upload is not working anymore
+
+User: user1@user.com
+password: user123
+
+
 # install dependencies
 $ npm install
 
